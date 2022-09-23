@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record id="OperaProfile views" model="ir.ui.view">
+    <field name= "OperaProfile views"> </field>
+    <field name="OperaProfile"> </field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <h1>
+            <field name="code" />
+            <field name="name" />
+          </h1>
+          <notebook>
+            <page string="Informazioni generali" name="general_information" >
+              <group>
+                      <field name="autore" />  
+                      <field name="data" />
+                      <field name="opera_type" widget="radio" />
+                      <field name="opera_image" widget="image" />
+                      <field name="opera_description" />
+              </group>
+            </page>    
+          </notebook>
+        </sheet>
+      </form>      
+    
+
+
+    </field>
+    </record> 
+                <record id="actions_OperaProfile" model="ir.actions.act_window">
+                  <field name="name">Profilo</field>
+                  <field name="res_model">OperaProfile</field>
+                  <field name="view_mode">form</field>
+                 </record>
+      <menuitem id="OperaProfile_root_menu" name="Galleria" />
+      <menuitem id="OperaProfile_sub_menu" parent="OperaProfile_root_menu" name="Galleria" />
+      <menuitem id="OperaProfile_menu" action="action_OperaProfile" name="Profilo" parent="OperaProfile_sub_menu"/>
+
+
+  </data>
+</odoo>
