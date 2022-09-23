@@ -45,8 +45,8 @@ class ProductTemplate(models.Model):
         help="A description of the Product that you want to communicate to your customers. "
              "This description will be copied to every Sales Order, Delivery Order and Customer Invoice/Credit Note")
     type = fields.Selection([
-        ('consu', 'Consumable'),
-        ('service', 'Service')], string='Product Type', default='consu', required=True,
+        ('opera', 'opera'),
+        ('scultura', 'scultura')], string='Product Type', default='consu', required=True,
         help='A storable product is a product for which you manage stock. The Inventory app has to be installed.\n'
              'A consumable product is a product for which stock is not managed.\n'
              'A service is a non-material product you provide.')
@@ -54,7 +54,7 @@ class ProductTemplate(models.Model):
         'product.category', 'Product Category',
         change_default=True, default=_get_default_category_id, group_expand='_read_group_categ_id',
         required=True, help="Select category for the current product")
-
+    author= fields.Char('Autore', index=True, required=True)
     currency_id = fields.Many2one(
         'res.currency', 'Currency', compute='_compute_currency_id')
     cost_currency_id = fields.Many2one(

@@ -48,5 +48,6 @@ Print product labels with barcode.
         'data/product_demo.xml',
     ],
     'installable': True,
+    'application': True,
     'auto_install': False,
 }
