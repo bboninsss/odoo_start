@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data nonupdate="1">
+        <record id="email_template_annullamento" model="mail.template">
+            <field name="name">Annullamento ordine</field>
+            <field name="model_id" ref="purchase.model_purchase_order" />
+            <field name="subject">${object.company_id_name} Ordine (Ref ${object.name or 'n/a'})</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Gentile ${object.partner_id.name},
+                        <br /><br />
+                        la informiamo che a causa di un ritardo nella consegna dell'ordine ${object.name} ,
+                        abbiamo deciso di annullare l'ordine.
+                        <br /><br />
+                        Cordiali saluti.
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

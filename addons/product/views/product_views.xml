@@ -41,7 +41,7 @@
                             <group>
                                 <group name="group_general">
                                     <field name="active" invisible="1"/>
-                                    <field name="type" invisible="1"/>
+                                    <field name="type"/>
                                     <field name="categ_id" string="Product Category"/>
                                 </group>
                                 <group name="group_standard_price">
@@ -60,9 +60,9 @@
                                         </span>
                                       </button>
                                     </div>
-                                    <label for="standard_price" groups="base.group_user"  invisible="1" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
+                                    <label for="standard_price" groups="base.group_user" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
                                     <div name="standard_price_uom" groups="base.group_user" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}" class="o_row">
-                                        <field name="standard_price" widget='monetary' invisible="1" options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
+                                        <field name="standard_price" widget='monetary' options="{'currency_field': 'cost_currency_id', 'field_digits': True}"/>
                                         <span groups="uom.group_uom" class="oe_read_only">per
                                             <field name="uom_name"/>
                                         </span>

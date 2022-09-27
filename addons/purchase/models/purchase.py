@@ -401,6 +401,11 @@ class PurchaseOrder(models.Model):
                 order.message_subscribe([order.partner_id.id])
         return True
 
+    def button_annullamento(self):
+        template_id = self.env.ref('purchase.email_template_annullamento').id
+        self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
+        self.write({'state': 'cancel'})
+   
     def button_cancel(self):
         for order in self:
             for inv in order.invoice_ids:

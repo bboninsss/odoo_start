@@ -134,6 +134,7 @@
             <field name="arch" type="xml">
                 <form string="Purchase Order" class="o_purchase_order">
                 <header>
+                    <button name="button_annullamento" string="Ordine in ritardo" attrs="{'invisible': [['state', '!=', 'purchase']]}" class="oe_highlight" type="object"/>
                     <button name="action_rfq_send" states="draft" string="Send by Email" type="object" context="{'send_rfq':True}" class="oe_highlight"/>
                     <button name="print_quotation" string="Print RFQ" type="object" states="draft" class="oe_highlight" groups="base.group_user"/>
                     <button name="button_confirm" type="object" states="sent" string="Confirm Order" class="oe_highlight" id="bid_confirm"/>
