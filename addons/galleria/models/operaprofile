@@ -13,5 +13,5 @@ class OperaProfile (models.Model):
     autore=fields.string (string="Autore")
     data=fields.DATE_FORMAT(string="Data produzione")
     opera_type=fields.selection ([("pittura", "Quadro"),("scultura","Scultura")], string="Tipologia")
-    opera_image=fields.image(string=immagine, max_width=200, max_height=200)
+    opera_image=fields.image(string="immagine", max_width=200, max_height=200)
     opera_description=fields.html(string="Descrizione")
