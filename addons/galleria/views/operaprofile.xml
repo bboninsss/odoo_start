@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <!-- Top menu item -->
+        <menuitem id="gallery_root"
+            name="Galleria"
+            sequence="10"/>
+
+        <menuitem id="gallery_operaprofile_root"
+            name="Opere"
+            parent="gallery_root"
+            sequence="10"/>
+
+        <menuitem id="gallery_operaprofile"
+            name="Opere"
+            parent="gallery_operaprofile_root"
+            sequence="10"/>  
+   
+</odoo>

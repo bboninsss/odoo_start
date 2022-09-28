@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="galleria.list">
+      <field name="name">galleria list</field>
+      <field name="model">galleria.galleria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="galleria.action_window">
+      <field name="name">galleria window</field>
+      <field name="res_model">galleria.galleria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="galleria.action_server">
+      <field name="name">galleria server</field>
+      <field name="model_id" ref="model_galleria_galleria"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="galleria" id="galleria.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="galleria.menu_1" parent="galleria.menu_root"/>
+    <menuitem name="Menu 2" id="galleria.menu_2" parent="galleria.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="galleria.menu_1_list" parent="galleria.menu_1"
+              action="galleria.action_window"/>
+    <menuitem name="Server to list" id="galleria" parent="galleria.menu_2"
+              action="galleria.action_server"/>
+-->
+  </data>
+</odoo>
