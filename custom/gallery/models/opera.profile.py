@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api 
 
-class OperaProfile(models.Model):
-    _name="opera.profile"
+class opera_profile(models.Model):
+    _name="opera_profile"
     _description="opera"
     _recname="code"
 

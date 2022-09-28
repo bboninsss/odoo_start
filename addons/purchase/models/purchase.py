@@ -405,6 +405,7 @@ class PurchaseOrder(models.Model):
         template_id = self.env.ref('purchase.email_template_annullamento').id
         self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
         self.write({'state': 'cancel'})
+        return {}
    
     def button_cancel(self):
         for order in self:
