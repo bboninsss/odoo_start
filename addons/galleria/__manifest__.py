@@ -3,8 +3,7 @@
     'name': "galleria",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        custom module for sia project:"Arte31" """,
 
     'description': """
         Long description of module's purpose
@@ -27,7 +26,7 @@
         'security/ir.model.access.csv',
         #'views/views.xml',
         #'views/templates.xml',
-        'views/operaprofile.xml'
+        'views/galleria_opera.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
