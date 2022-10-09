@@ -49,4 +49,5 @@ Print product labels with barcode.
     ],
     'installable': True,
     'auto_install': False,
+    'application': True, 
 }

@@ -19,14 +19,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','product'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence.xml',
         #'views/views.xml',
         #'views/templates.xml',
-        'views/galleria_opera.xml'
+        'views/galleria_opera.xml',
+        'views/artista.xml',
+        'views/salegallery.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-   <record id="galleria_opera" model="ir.actions.act_window" >
-      <field name="name">galleria_opera</field>
+    <!-- vista form -->
+    <record id="galleria_opera_form" model="ir.ui.view">
+            <field name="name">galleria_opera.form</field>
+            <field name="model">galleria_opera</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="idcode"/>
+                                <field name="name"/>
+                                <field name="artista"/>
+                                <field name="opera_image"/>
+                            </group>
+                            <group>
+                                <field name="data"/>
+                                <field name="opera_type"/>
+                                <field name="exclusive"/>
+                                <field name="opera_description"/>
+                            </group>
+                        </group> 
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+     <!-- vista tree -->
+        <record id="galleria_opera_tree" model="ir.ui.view">
+            <field name="name">galleria_opera.tree</field>
+            <field name="model">galleria_opera</field>
+            <field name="arch" type="xml">
+                <tree string="Opere">
+                    <field name="idcode"/>
+                    <field name="name"/>
+                    <field name="artista"/>
+                    <field name="data"/>
+                    <field name="opera_type"/>
+                    <field name="exclusive"/>
+                </tree>
+            </field>
+        </record>
+
+     <!-- collegamento menu -->
+    <record id="galleria_opera" model="ir.actions.act_window" >
+      <field name="name">Opere</field>
       <field name="res_model">galleria_opera</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -18,6 +61,7 @@
         <menuitem id="gallery_operaprofile"
             name="Opere"
             parent="gallery_operaprofile_root"
+            action="galleria_opera"
             sequence="10"/>  
    
 </odoo>
