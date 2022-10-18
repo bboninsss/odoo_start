@@ -646,9 +646,14 @@
                                             <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
                                         </t>
                                     </t>
-                                    <t t-call="website_sale.product_price" />
+                                    <t t-if="product.list_price">
+                                        <t t-if="product.list_price != '0,00'" t-call="website_sale.product_price"/>
+                                    </t> 
+                                    <t t-else=""><a>Opera Exclusive!</a><br/><a>Contattaci per richiedere il tuo preventivo</a></t>   
                                     <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
-                                    <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+                                    <t t-if="product.list_price">
+                                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#" attrs="{'invisible': [['product.list_price', '!=', '0,00']]}"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+                                    </t>
                                     <div id="product_option_block"/>
                                 </div>
                             </form>
@@ -684,8 +689,7 @@
         <xpath expr="//div[@id='product_details']" position="inside">
             <p class="text-muted">
                 <a href="/shop/terms">Terms and Conditions</a><br/>
-                30-day money-back guarantee<br/>
-                Shipping: 2-3 Business Days
+                <br/>
             </p>
         </xpath>
     </template>

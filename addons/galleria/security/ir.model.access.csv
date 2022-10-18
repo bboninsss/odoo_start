@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_galleria_galleria,galleria.galleria,model_galleria_galleria,base.group_user,1,1,1,1
 access_galleria_opera,galleria.galleria,model_galleria_opera,base.group_user,1,1,1,1
 access_autore,galleria.galleria,model_artista,base.group_user,1,1,1,1
+access_on_sale,galleria.galleria,model_on_sale_wizard,base.group_user,1,1,1,1

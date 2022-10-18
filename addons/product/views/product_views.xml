@@ -27,12 +27,12 @@
                         <h1><field name="name" placeholder="Product Name"/></h1>
                         <div name="options" groups="base.group_user">
                             <div>
-                                <field name="sale_ok"/>
-                                <label for="sale_ok"/>
+                                <field name="sale_ok" invisible="1"/>
+                                <label for="sale_ok" invisible="1"/>
                             </div>
                             <div>
-                                <field name="purchase_ok"/>
-                                <label for="purchase_ok"/>
+                                <field name="purchase_ok" invisible="1"/>
+                                <label for="purchase_ok" invisible="1"/>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                       <field name="list_price" class="oe_inline" widget='monetary'
                                         options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                                       <button name="open_pricelist_rules" icon="fa-arrow-right" type="object"
-                                        groups="product.group_product_pricelist" class="oe_inline">
+                                        groups="product.group_product_pricelist" invisible="1" class="oe_inline">
                                         <field name="pricelist_item_count" attrs="{'invisible': [('pricelist_item_count', '=', 0)]}"/>
                                         <span attrs="{'invisible': [('pricelist_item_count', '=', 1)]}">
                                           Extra Prices
@@ -76,7 +76,7 @@
                                     <field name="product_variant_id" invisible="1"/>
                                 </group>
                             </group>
-                            <group string="Internal Notes">
+                            <group string="Internal Notes" invisible="1">
                                 <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
                             </group>
                         </page>

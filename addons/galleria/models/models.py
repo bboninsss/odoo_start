@@ -7,7 +7,8 @@ class galleria(models.Model):
      _name = 'galleria.galleria'
      _description = 'galleria.galleria'
 
-#     name = fields.Char()
+     name = fields.Selection([('base', 'Base'), ('exc', 'Exclusive')], string="Tag")
+     color= fields.Integer(string="color index")
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()

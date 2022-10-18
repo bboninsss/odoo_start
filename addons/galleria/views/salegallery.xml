@@ -11,16 +11,15 @@
                         <field name="code"/>
                         <field name="sale_artist"/>
                         <field name="opera_data"/>
-                        <field name="opera_type"/>
+                        <field name="tipo_opera"/>
                         <field name="exclusive"/>
                         <field name="opera_image" widget="image"/>
                         <field name="opera_description"/>
-
+                </field>
+                <field name="list_price" position="attributes">
+                    <attribute name="attrs">{'invisible': [('exclusive', '!=', 'base')]}</attribute>
                 </field>
             </field>
         </record>
-
-
-
 
 </odoo>

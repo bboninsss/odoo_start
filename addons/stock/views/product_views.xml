@@ -321,7 +321,7 @@
                                 <span class="o_stat_text">On Hand</span>
                             </div>
                         </button>
-                        <button type="object"
+                        <button type="object" invisible="1"
                             name="action_product_tmpl_forecast_report"
                             attrs="{'invisible':[('type', '!=', 'product')]}"
                             context="{'default_product_tmpl_id': id}"
@@ -334,7 +334,7 @@
                                 <span class="o_stat_text">Forecasted</span>
                             </div>
                         </button>
-                        <button string="Product Moves" type="object"
+                        <button string="Product Moves" invisible="1" type="object"
                             name= "action_view_stock_move_lines"
                             attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
                             class="oe_stat_button" icon="fa-exchange"
@@ -352,7 +352,7 @@
                                 <span class="o_stat_value"><field name="reordering_max_qty"/></span>
                             </div>
                         </button>
-                        <button type="object"
+                        <button type="object" invisible="1"
                             name="action_view_orderpoints"
                             attrs="{'invisible':['|',('type', '!=', 'product'),('nbr_reordering_rules', '==', 1)]}"
                             class="oe_stat_button"

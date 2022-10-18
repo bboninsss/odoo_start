@@ -25,6 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'wizard/on_sale_view.xml',
         #'views/views.xml',
         #'views/templates.xml',
         'views/galleria_opera.xml',

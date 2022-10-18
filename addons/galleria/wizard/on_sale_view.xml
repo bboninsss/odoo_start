@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="on_sale_view_form" model="ir.ui.view">
+            <field name="name">on_sale_view_form</field>
+            <field name="model">on_sale_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Metti in vendita">
+                    <group class="oe_title">
+                        <field name="name" options="{'no_create_edit': True}" />
+                        <field name="list_price" attrs="{'invisible': [('exclusive', '!=' ,'base')]}"/>
+                        <field name="exclusive"/>
+                    </group>
+                    <footer>
+                        <button name="action_on_sale" type="object" string="Metti in vendita" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_on_sale" model="ir.actions.act_window">
+            <field name="name">In vendita</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">on_sale_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="on_sale_view_form"/>
+            <field name="target">new</field>
+        </record>
+</odoo>

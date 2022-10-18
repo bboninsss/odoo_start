@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <record id="galleria_opera_kanban" model="ir.ui.view">
+            <field name="name">galleria_opera.kanban</field>
+            <field name="model">galleria_opera</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="idcode"/>
+                    <field name="name"/>
+                    <field name="artista"/>
+                    <field name="id"/>
+                    <field name="opera_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('galleria_opera', 'opera_image', record.id.raw_value)" alt="Immagine"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                       Nome: <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                           <strong>Codice ID: <field name="idcode"/></strong>
+                                        </li>
+                                         <li>
+                                           <strong>Artista: <field name="artista"/></strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
     <!-- vista form -->
     <record id="galleria_opera_form" model="ir.ui.view">
             <field name="name">galleria_opera.form</field>
             <field name="model">galleria_opera</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="%(action_on_sale)d" type="action" string="Metti in vendita" class="btn-primary"/>
+                    </header>
                     <sheet>
-                        <group>
-                            <group>
-                                <field name="idcode"/>
+                        <field name="opera_image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <h4>
+                                <field name="idcode" readonly="1"/>
+                            </h4>
+                            <h2>
+                                <label for="name" string="Nome Opera" class="oe_edit_only"/>
                                 <field name="name"/>
+                            </h2>
+                        </div>    
+                        <group>
+                            <group string="Informazioni">
                                 <field name="artista"/>
-                                <field name="opera_image"/>
+                                <field name="tipo_opera"/>
+                                <field name="exclusive"/>
                             </group>
                             <group>
                                 <field name="data"/>
-                                <field name="opera_type"/>
-                                <field name="exclusive"/>
                                 <field name="opera_description"/>
                             </group>
                         </group> 
@@ -31,13 +77,13 @@
             <field name="name">galleria_opera.tree</field>
             <field name="model">galleria_opera</field>
             <field name="arch" type="xml">
-                <tree string="Opere">
+                <tree string="Opere" >
                     <field name="idcode"/>
                     <field name="name"/>
                     <field name="artista"/>
                     <field name="data"/>
-                    <field name="opera_type"/>
-                    <field name="exclusive"/>
+                    <field name="tipo_opera"/>
+                    <field name="exclusive" decoration-info="exclusive=='base'" decoration-success="exclusive=='exc'"/>
                 </tree>
             </field>
         </record>
@@ -46,7 +92,7 @@
     <record id="galleria_opera" model="ir.actions.act_window" >
       <field name="name">Opere</field>
       <field name="res_model">galleria_opera</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
         <!-- Top menu item -->
         <menuitem id="gallery_root"
@@ -62,6 +108,13 @@
             name="Opere"
             parent="gallery_operaprofile_root"
             action="galleria_opera"
-            sequence="10"/>  
+            sequence="10"/> 
+
+        <menuitem id="menu_onsale"
+            name="Metti in vendita"
+            parent="gallery_operaprofile_root"
+            action="action_on_sale"
+            sequence="20"/>
+
    
 </odoo>

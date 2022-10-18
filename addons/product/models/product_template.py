@@ -46,7 +46,7 @@ class ProductTemplate(models.Model):
              "This description will be copied to every Sales Order, Delivery Order and Customer Invoice/Credit Note")
     type = fields.Selection([
         ('consu', 'Consumable'),
-        ('service', 'Service')], string='Product Type', default='consu', required=True,
+        ('service', 'Service')], string='Product Type', default='product', required=True,
         help='A storable product is a product for which you manage stock. The Inventory app has to be installed.\n'
              'A consumable product is a product for which stock is not managed.\n'
              'A service is a non-material product you provide.')
@@ -92,7 +92,7 @@ class ProductTemplate(models.Model):
     weight_uom_name = fields.Char(string='Weight unit of measure label', compute='_compute_weight_uom_name')
 
     sale_ok = fields.Boolean('Can be Sold', default=True)
-    purchase_ok = fields.Boolean('Can be Purchased', default=True)
+    purchase_ok = fields.Boolean('Can be Purchased', default=False)
     pricelist_id = fields.Many2one(
         'product.pricelist', 'Pricelist', store=False,
         help='Technical field. Used for searching on pricelists, not stored in database.')
@@ -134,7 +134,7 @@ class ProductTemplate(models.Model):
     default_code = fields.Char(
         'Internal Reference', compute='_compute_default_code',
         inverse='_set_default_code', store=True)
-
+    
     pricelist_item_count = fields.Integer("Number of price rules", compute="_compute_item_count")
 
     can_image_1024_be_zoomed = fields.Boolean("Can Image 1024 be zoomed", compute='_compute_can_image_1024_be_zoomed', store=True)
