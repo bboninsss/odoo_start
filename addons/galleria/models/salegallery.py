@@ -12,7 +12,7 @@ class salegallery(models.Model):
     opera_data=fields.Date(string="Data produzione",related="name.data")
     tipo_opera=fields.Selection(string="Tipologia", related="name.tipo_opera")
     exclusive=fields.Selection(string="Esclusività",related="name.exclusive")
-    opera_image=fields.Image(string="immagine", max_width=100, max_height=100, widget="image", related="name.opera_image")
+    opera_image=fields.Image(string="immagine", related="name.opera_image")
     opera_description=fields.Text(string="Descrizione",related="name.opera_description")
     
 
