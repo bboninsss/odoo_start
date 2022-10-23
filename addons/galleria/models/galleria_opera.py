@@ -50,4 +50,7 @@ class galleria_opera(models.Model):
         return self.env['galleria.galleria'].search([('name', 'in', ['base', 'exc'])]).ids
     tags = fields.Many2many('galleria.galleria', default=get_tags, string="tag")
 
+       
+
+    
     
