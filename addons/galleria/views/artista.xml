@@ -6,7 +6,7 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <group>
+                        <group string="Nuovo Artista">
                             <group>
                                 <field name="code"/>
                                 <field name="name"/>
@@ -25,6 +25,22 @@
                 </form>
             </field>
         </record>
+
+         <!-- vista tree -->
+        <record id="artista_tree" model="ir.ui.view">
+            <field name="name">artista.tree</field>
+            <field name="model">artista</field>
+            <field name="arch" type="xml">
+                <tree string="Artisti" >
+                    <field name="name"/>
+                    <field name="surname"/>
+                    <field name="place"/>
+                    <field name="birth"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
         <record id="artista" model="ir.actions.act_window" >
                 <field name="name">Artisti</field>
                 <field name="res_model">artista</field>
