@@ -16,7 +16,7 @@ class galleria_opera(models.Model):
     data=fields.Date(string="Data produzione")
     tipo_opera = fields.Selection([('dip', 'Dipinto'), ('scul', 'Scultura')], string="Tipologia")
     exclusive=fields.Selection([('base', 'Base'), ('exc', 'Exclusive')], default="base", string="Esclusività")
-    opera_image=fields.Image(string="immagine", max_width=100, max_height=100)
+    opera_image=fields.Binary(string="immagine")
     opera_description=fields.Text(string="Descrizione")
     esposizione=fields.Char(string="Esposizione")
     

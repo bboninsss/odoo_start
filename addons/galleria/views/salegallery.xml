@@ -13,7 +13,6 @@
                         <field name="opera_data"/>
                         <field name="tipo_opera"/>
                         <field name="exclusive"/>
-                        <field name="opera_image" widget="image"/>
                         <field name="opera_description"/>
                 </field>
                 <field name="list_price" position="attributes">
